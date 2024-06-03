@@ -1,0 +1,204 @@
+.bg-image-vertical {
+position: relative;
+overflow: hidden;
+background-repeat: no-repeat;
+background-position: right center;
+background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+.h-custom-2 {
+height: 100%;
+}
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%; /* Set the height to 100% to center the form vertically in the viewport */
+}
+
+.custom-form-login {
+  width: 80%; /* Set the desired width for your form */
+  max-width: 23rem; /* Limit the maximum width */
+  height: 100vh;
+  margin: 0 auto; /* Center the form horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center the form vertically */
+}
+
+.font_irish_grover {
+  font-family: 'Irish Grover', cursive;
+}
+
+.big-site-name {
+  background-color: #A2D3EF;
+  font-family: 'Irish Grover', cursive;
+  /* padding: 15px 5px; */
+  color: white;
+  height: 13vh;
+}
+
+.bar-logo {
+  float: left; /* Align the element to the left */
+  width: 150px;
+}
+
+.container {
+  display: flex;
+}
+
+.table-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.game-instructions {
+  flex: 1;
+  padding: 20px;
+}
+
+
+.default-button {
+  font-family: 'Irish Grover', cursive;
+  background-color: #FABF7A;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10%; /* Makes the button rounded */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding:10px 400px;
+  align-items: center;
+}
+
+/* button container for round 2 & 3 */
+.double-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 100px;
+  margin: 0 0px; /* Adjust the distance between squres */
+}
+
+/* button container for round 1 */
+.single-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  height: 100px;
+  margin: 0 0px; /* Adjust the distance between squres */
+}
+
+.game-button-left-default {
+  background-color: #FABF7A;
+  padding: 10px 0px;
+  width: 150px; /* Increase the width to make the button wider */
+  height: 75px; /* Increase the height to make the button taller */
+  border: none;
+  cursor: pointer;
+  border-radius: 10%; /* Makes the button rounded */
+}
+
+.game-button-right-default {
+  background-color: #A6DFFF;
+  padding: 10px 0px;
+  width: 150px; /* Increase the width to make the button wider */
+  height: 75px; /* Increase the height to make the button taller */
+  border: none;
+  cursor: pointer;
+  border-radius: 10%; /* Makes the button rounded */
+}
+
+.square-container {
+  display: flex;
+  justify-content: center;
+}
+
+.double_square {
+  width: 350px;
+  height: 350px;
+  margin: 0 0px; /* Adjust the distance between squres */
+  border: 2px solid #2C89DF;
+}
+
+.single_square {
+  width: 350px;
+  height: 350px;
+}
+
+.circle {
+  height: 300px;
+  width: 300px;
+  background-color: #cccccc;
+  border-radius: 50%;
+  margin: 25px;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 150px solid transparent;
+	border-right: 150px solid transparent;
+	border-bottom: 300px solid #cccccc;
+  margin: 25px;
+}
+
+/* Style the label of field in the form */
+label {
+  font-family: 'Irish Grover', cursive;
+}
+
+input {
+  font-family: 'Irish Grover', cursive;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: 'Irish Grover', cursive;
+  min-width: 400px;
+}
+
+.styled-table thead tr {
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #fdf9f3;
+}
+
+.get_ready_text {
+  font-family: 'Irish Grover', cursive;
+  font-size: 5em;
+  text-align: center;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset="utf-8">
+        {% load static %}
+            <!-- Font Awesome -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+        <!-- Google Fonts Roboto -->
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+        />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
+        <!-- MDB -->
+        <link href="{% static "quickflash/mdb.min.css" %}" rel="stylesheet" />
+        <link href="{% static 'quickflash/quickflash.css' %}" rel="stylesheet" type="text/css">
+		    <script src="{% static 'quickflash/game_actions.js' %}" type="text/javascript"></script>
+	</head>
+  <body>  
+<section>
+    <div>
+      <div class="row">
+        <div class="col-sm-6 text-black">
+  
+          <div class="px-5 ms-xl-4">
+            {% comment %} <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i> {% endcomment %}
+            {% comment %} <span class="h1 fw-bold mb-0">Logo</span> {% endcomment %}
+          </div>
+  
+          <div class = "align-items-center">
+           
+            <form class="custom-form-login" method="post" action="{% url 'register' %}">
+  
+              <h2 class="fw-normal mb-3 pb-3" style="letter-spacing: 3px; font-family: 'Irish Grover', cursive; color: #A2D3EF; font-weight: bold; font-size: 52px;text-align: center;">Quick Flash</h2>
+            <table>
+                {{form}}
+            </table>
+            {% csrf_token %}
+              <div class="pt-1 mb-4">
+                <button id="id_login_button" class="btn btn-info btn-lg btn-block font_irish_grover " style="background-color: #A2D3EF;" type="submit">Register</button>
+              </div>
+              <a id = "id_register_link" class="font_irish_grover" style="color:lightgray" href="{% url 'login' %}">Login</a>  
+            </form>
+  
+          </div>
+  
+        </div>
+        <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="{% static 'img/login_main.PNG' %}"
+            alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

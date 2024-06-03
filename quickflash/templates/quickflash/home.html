@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset="utf-8">
+        {% load static %}
+        <link href="{% static 'quickflash/quickflash.css' %}" rel="stylesheet" type="text/css">
+		<script src="{% static 'quickflash/game_actions.js' %}" type="text/javascript"></script>
+	</head>
+    <body>
+        <div class="big-site-name" id="id_header_div">
+            <img src="{% static 'img/logo_bar.PNG' %}"
+            alt="Login image" class="w-100 vh-100 bar-logo" style="object-fit: cover; object-position: left; ">
+            <a id = "id_register_link" class="font_irish_grover" style="color:gray; float: right" href="{% url 'logout' %}">Logout</a>
+            <a id="id_home" class="font_irish_grover" style="color: gray; float: right; margin-right: 10px;" href="{% url 'home' %}">Home</a>
+
+        </div>
+        <p id="id_nav_profile" class="font_irish_grover" style="color: gray; float: right; margin-right: 10px;">
+            Hello! {{ user.username }}<br>
+        </p>
+        <div class="container" id="home_page_container">
+            <div class="table-container">
+                <!-- Your table goes here -->
+                <h2 class="font_irish_grover" style="color: #E99533;">Ranking</h2>
+                <table border="1" class="styled-table">
+                    <tr>  
+                        <th style="background-color: #f3c58f; color: white;">Username</th>
+                        <th style="background-color: #f3c58f; color: white;">Score</th>
+                        <th style="background-color: #f3c58f; color: white;">Round 1</th>
+                        <th style="background-color: #f3c58f; color: white;">Round 2</th>
+                        <th style="background-color: #f3c58f; color: white;">Round 3</th>
+                        <th style="background-color: #f3c58f; color: white;">Completed Round 3</th>
+                    </tr>
+                </table>
+                
+                <script>
+                    // Fetch JSON data from the server
+                    fetch('/quickflash/final-scores')
+                        .then(response => response.json())
+                        .then(data => {
+                            const table = document.querySelector('table');
+                
+                            data.forEach(item => {
+                                const row = table.insertRow(-1);
+                                Object.values(item).forEach(value => {
+                                    const cell = row.insertCell();
+                                    cell.textContent = value;
+                                });
+                            });
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+                </script>                
+            </div>
+    
+            <div class="game-instructions font_irish_grover" style="color: gray;">
+                <h2 class="font_irish_grover " style="color: #E99533;">Game Instructions</h2>
+                <p>1. The game consists of three rounds</p>
+                <p>2. Each round lasts for 30 seconds</p>
+                <p>3. Difficulty levels will progressively increase with each round</p>
+                <p>4. When a circle is shown, click the left button; when a triangle is shown, click the right button</p>
+                <p>5. Earn 100 points for each correct match</p>
+                <button class ="default-button" type="submit" id="start_game" onclick="joinRoomRequest()">Start Game</button>
+                <br>
+                <div id="join_room_response" class="font_irish_grover" style="color: #E99533; font-weight: bolder; font-size: larger;"></div>
+            </div>
+            <div id="access-token" style="display:none;">{{ access }}</div>
+        </div>
+        <div id="message" class="font_irish_grover" style="color: gray;"></div>       
+        <div id="scoreboard"></div>
+        <div id="game_layout"></div>
+    </body>
+</html>
+</html>
